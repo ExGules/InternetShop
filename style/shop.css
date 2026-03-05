@@ -17,6 +17,10 @@
 }
 
 .shop .sidebar .search .search-row {
+    font-family: Raleway;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 170%;
     padding: 0 25px 15px 0;
 }
 
@@ -215,7 +219,10 @@
 }
 
 .shop .products-wrapper .products .product .info .name {
-
+    font-family: Raleway;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 170%;
 }
 
 .shop .products-wrapper .products .product .info .price {

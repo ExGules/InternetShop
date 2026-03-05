@@ -1,7 +1,7 @@
 /* Левая сторона шапки */
 
 .header {
-  max-width: 1920px;
+  max-width: 1800px;
   margin: 50px auto 0 60px;
   display: flex;
   justify-content: space-between;
