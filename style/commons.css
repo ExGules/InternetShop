@@ -47,6 +47,7 @@
     width: 2px;
     height: 100%;
     background: rgba(0, 0, 0, 1);
+    padding: 25px 0px;
 }
 
 .container .price {
@@ -110,4 +111,118 @@
     height: 3px;
     margin-right: 8px;
     background-image: url('../icons/small-row.svg');
+}
+
+
+
+
+.first-screen {
+  width: 100%;
+  height: 471px;
+}
+
+.content-shop {
+  width: 850px;
+  height: 322px;
+  position: absolute;
+  top: 103px;
+  left: -60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.dot-pattern {
+  position: absolute;
+  top: 52px;
+  left: 132px;
+  width: 322px;
+  height: 354px;
+  z-index: 1;
+  background-image: radial-gradient(circle, #000 1px, transparent 1px);
+  background-size: 30px 30px;
+  opacity: 50%;
+  transform: rotate(90deg)
+}
+
+.text-content-shop {
+  top: 63px;
+  left: 432px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 400;
+  font-size: 80px;
+  line-height: 100%;
+  color: #000;
+  margin: 0;
+  z-index: 2;
+  position: relative;
+}
+
+.bread-crumbs {
+  position: absolute;
+  top: 281px;
+  left: 431px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 2;
+}
+
+.vertical-line {
+  width: 1.5px;
+  height: 21px;
+  background-color: #000;
+  opacity: 1;
+  z-index: 2;
+}
+
+.horizontal-line {
+  position: relative;
+  width: 850px;
+  height: 2px;
+  background-color: #000;
+  opacity: 1;
+    z-index: 1;
+    top: 122px;
+    left: 60px;
+}
+
+.image-shop {
+    margin-top: 50px;
+    margin-left: 1000px;
+    margin-bottom: 199px;
+    width: 800px;
+    height: 400px;
+    background-color: #F1F2F3;
+    z-index: 0;
+}
+
+.container .find-us .find-us-text {
+    margin: 0 0 20px 0;
+    font-weight: 500;
+    line-height: 170%;
+    color: rgba(0, 0, 0, 1);
+}
+
+.container .find-us .find-us-links {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.container .find-us .find-us-links .find-us-link a {
+    text-decoration: none;
+    font-family: Raleway;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 100%;
+    text-transform: uppercase;
+    color: rgba(68, 68, 68, 1);
+}
+
+.container .find-us .find-us-links .line {
+    border-bottom: 1px solid #444444;
+    height: 1px;
+    width: 10px;
 }

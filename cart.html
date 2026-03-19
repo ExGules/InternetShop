@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="./style/commons.css">
 </head>
 <body>
+    <div class="first-screen">
     <header class="header">
         <div class="left-side">
             <div class="logo-container">
@@ -68,6 +69,19 @@
             </div>
         </div>
     </header>
+    <div class="content-shop">
+        <div class="dot-pattern"></div>
+        <div class="text-content-shop">Cart</div>
+        <div class="bread-crumbs">
+            <div class="vertical-line"></div>
+            <div class="text-home">Home</div>
+            <div class="text-shop">Shop</div>
+            <div class="text-cart">Cart</div>
+        </div>
+        <div class="horizontal-line"></div>
+    </div>
+    <div class="image-shop"></div>
+    </div>
 
 
     <br>
@@ -92,8 +106,8 @@
                             <div class="price-wrapper">
                                 <div class="price-and-quanity">
                                     <div class="price">
-                                        <div class="carrent-price">$52.99</div>
-                                        <div class="old-price">$35.99</div>
+                                        <div class="old-price">$52.99</div>
+                                        <div class="carrent-price">$35.99</div>
                                     </div>
                                     <div class="quantity">
                                         <div class="count-button">-</div>
@@ -114,8 +128,7 @@
                             <div class="price-wrapper">
                                 <div class="price-and-quanity">
                                     <div class="price">
-                                        <div class="carrent-price">$52.99</div>
-                                        <div class="old-price">$35.99</div>
+                                        <div class="carrent-price">$110.99</div>
                                     </div>
                                     <div class="quantity">
                                         <div class="count-button">-</div>
@@ -124,7 +137,7 @@
                                     </div>
                                 </div>
                                 
-                                <div class="total-price">$35.99</div>
+                                <div class="total-price">$110.99</div>
                             </div>
                             <div class="close">X</div>
                         </div>
@@ -156,6 +169,42 @@
                 </div>
                 </div>
             </div>
+            <div class="promo-code-wrapper">
+                <div class="info">
+                    <div class="title">You Have A Promo Code?</div>
+                    <div class="description">
+                        To receive up-to-date promotional codes, subscribe to us on social networks.
+                    </div>
+                </div>
+                <div class="promo-code">
+                    <input type="text" name="promo-code" class="input" placeholder="Enter promo code">
+                        <div class="button-wrapper">
+                            <button class="button">
+                                <img src="./icons/arrow-right.svg" alt="arrow icon">
+                            </button>
+                                <div class="vertical-line"></div>
+                </div>
+            </div>
+            <div class="find-us">
+                    <div class="find-us-text">Find us here:</div>
+                    <div class="find-us-links">
+                        <div class="find-us-link">
+                            <a href="">FB</a>
+                        </div>
+                        <div class="line"></div>
+                        <div class="find-us-link">
+                            <a href="">TW</a>
+                        </div>
+                        <div class="line"></div>
+                        <div class="find-us-link">
+                            <a href="">INS</a>
+                        </div>
+                        <div class="line"></div>
+                        <div class="find-us-link">
+                            <a href="">PT</a>
+                        </div>
+                    </div>
+                </div>
         </div>
     </div>
 
@@ -171,95 +220,97 @@
     <br>
     <br>
 
-     <footer class="footer">
-        <div class="container">
-            <div class="footer-info">
-                <div class="column column-1">
-                    <div class="logo">
-                        <img src="./icons/logo.svg" alt="logo">
-                    </div>
-                    <div class="about-brand">
-                        Cillum eu id enim aliquip aute ullamco anim. Culpa deserunt nostrud excepteur voluptate.
-                    </div>
-                    <div class="find-us">
-                        <div class="find-us-text">Find us here:</div>
-                        <div class="find-us-links">
-                            <div class="find-us-link">
-                                <a href="">FB</a>
-                            </div>
-                            <div class="line"></div>
-                            <div class="find-us-link">
-                                <a href="">TW</a>
-                            </div>
-                            <div class="line"></div>
-                            <div class="find-us-link">
-                                <a href="">INS</a>
-                            </div>
-                            <div class="line"></div>
-                            <div class="find-us-link">
-                                <a href="">PT</a>
-                            </div>
+<footer class="footer">
+    <div class="container">
+        <div class="footer-info">
+            <div class="column column-1">
+                <div class="logo">
+                    <img src="./icons/logo.svg" alt="logo">
+                </div>
+                <div class="about-brand">
+                    Cillum eu id enim aliquip aute ullamco anim. Culpa deserunt nostrud excepteur voluptate.
+                </div>
+                <div class="find-us">
+                    <div class="find-us-text">Find us here:</div>
+                    <div class="find-us-links">
+                        <div class="find-us-link">
+                            <a href="">FB</a>
+                        </div>
+                        <div class="line"></div>
+                        <div class="find-us-link">
+                            <a href="">TW</a>
+                        </div>
+                        <div class="line"></div>
+                        <div class="find-us-link">
+                            <a href="">INS</a>
+                        </div>
+                        <div class="line"></div>
+                        <div class="find-us-link">
+                            <a href="">PT</a>
                         </div>
                     </div>
                 </div>
-                <div class="column column-2">
-                        <div class="title">About</div>
-                            <ul class="custom-list">
-                                <li class="item"><a href="">About us</a></li>
-                                <li class="item"><a href="">Collections</a></li>
-                                <li class="item"><a href="">Shop</a></li>
-                                <li class="item"><a href="">Blog</a></li>
-                                <li class="item"><a href="">Contact us</a></li>
-                            </ul>
-                    </div>
-                    <div class="column column-3">
-                        <div class="title">Useful links</div>
-                            <ul class="custom-list">
-                                <li class="item"><a href="">Privacy Policy</a></li>
-                                <li class="item"><a href="">Terms of use</a></li>
-                                <li class="item"><a href="">Support</a></li>
-                                <li class="item"><a href="">Shipping details</a></li>
-                                <li class="item"><a href="">FAQs</a></li>
-                            </ul>
-                    </div>
-                    <div class="column column-4">
-                        <div class="title">Newsletter</div>
-                        <div class="newsletter-text">
-                            Subscribe to be the first to hear about deals,  offers and upcoming collections.
-                        </div>
-                        <div class="newsletter-form">
-                            <form action="">
-                                <label>
-                                    <input type="text" placeholder="Enter your email" class="input">
-                                    <img src="./icons/send.svg" alt="send" class="send-icon">
-                                </label>
-                            </form>
-                        </div>
-                    </div>
             </div>
-            <div class="coopyright">
-                <div>
-                    © All right reserved. Fashionee 2020
+            <div class="column column-2">
+                <div class="title">About</div>
+                <ul class="custom-list">
+                    <li class="item"><a href="">About us</a></li>
+                    <li class="item"><a href="">Collections</a></li>
+                    <li class="item"><a href="">Shop</a></li>
+                    <li class="item"><a href="">Blog</a></li>
+                    <li class="item"><a href="">Contact us</a></li>
+                </ul>
+            </div>
+            <div class="column column-3">
+                <div class="title">Useful links</div>
+                <ul class="custom-list">
+                    <li class="item"><a href="">Privacy Policy</a></li>
+                    <li class="item"><a href="">Terms of use</a></li>
+                    <li class="item"><a href="">Support</a></li>
+                    <li class="item"><a href="">Shipping details</a></li>
+                    <li class="item"><a href="">FAQs</a></li>
+                </ul>
+            </div>
+            <div class="column column-4">
+                <div class="title">Newsletter</div>
+                <div class="newsletter-text">
+                    Subscribe to be the first to hear about deals, offers and upcoming collections.
                 </div>
-                <div class="payment-methods-container">
-                    <div>Payment methods:</div>
-                    <div class="payment-methods">
-                        <div class="payment-method">
-                            <img src="./icons/visa.svg" alt="visa">
-                        </div>
-                        <div class="payment-method">
-                            <img src="./icons/master-card.svg" alt="master-card">
-                        </div>
-                        <div class="payment-method">
-                            <img src="./icons/pay-pal.svg" alt="pay-pal">
-                        </div>
-                        <div class="payment-method">
-                            <img src="./icons/payoneer.svg" alt="payoneer">
-                        </div>
+                <div class="newsletter-form">
+                    <form action="">
+                        <label>
+                            <input type="text" placeholder="Enter your email" class="input">
+                            <img src="./icons/send.svg" alt="send" class="send-icon">
+                        </label>
+                    </form>
+                </div>
+                <!-- Точечный паттерн теперь внутри column-4 -->
+                <div class="dot-pattern-footer"></div>
+            </div>
+        </div>
+        <div class="coopyright">
+            <div>
+                © All right reserved. Fashionee 2020
+            </div>
+            <div class="payment-methods-container">
+                <div>Payment methods:</div>
+                <div class="payment-methods">
+                    <div class="payment-method">
+                        <img src="./icons/visa.svg" alt="visa">
+                    </div>
+                    <div class="payment-method">
+                        <img src="./icons/master-card.svg" alt="master-card">
+                    </div>
+                    <div class="payment-method">
+                        <img src="./icons/pay-pal.svg" alt="pay-pal">
+                    </div>
+                    <div class="payment-method">
+                        <img src="./icons/payoneer.svg" alt="payoneer">
                     </div>
                 </div>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
 </body>
 </html>

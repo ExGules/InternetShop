@@ -264,3 +264,131 @@
     width: 22px;
     text-align: center;
 }
+
+.text-home,
+.text-shop {
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  text-decoration: none;
+}
+
+.text-shop {
+  color: #FF8E8E;
+  font-weight: 500;
+}
+
+.subscribe {
+  margin: 198px 114px 120px 126px;
+  display: flex;
+  flex-direction: column;
+  max-width: 1680px;
+  width: 100%;
+  height: 450px;
+  background: rgba(241, 242, 243, 1);
+  position: relative; 
+  overflow: visible;  
+}
+
+.subscribe .subscribe-info {
+  margin: 0px 275px;
+  max-width: 624px;
+  height: 288px;
+  background: rgba(255, 255, 255, 1);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.dot-patterny {
+  position: absolute;
+  top: -38px;       
+  right: 795px;      
+  width: 130px;
+  height: 130px;
+  z-index: 10;     
+  background-image: radial-gradient(circle, #000 1px, transparent 2px);
+  background-size: 28px 27px;
+  opacity: 0.5;     
+  pointer-events: none; 
+}
+
+
+.subscribe .subscribe-info .info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 60px 60px 0;
+}
+
+.subscribe .subscribe-info .title {
+  font-family: Josefin Sans;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 120%;
+  margin: 0;
+}
+
+.subscribe .subscribe-info .info-text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 170%;
+  margin: 0;
+}
+
+.subscribe .subscribe-info .email {
+  display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-top: 20px;
+    margin-bottom: 60px;
+    margin-left: 60px;
+}
+
+.subscribe .subscribe-info .input {
+  max-width: 360px;
+  width: 100%;
+  height: 40px;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid rgba(68, 68, 68, 20%);
+  color: rgba(68, 68, 68, 50%);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 170%;
+  padding: 0 25px 15px 0;
+  box-sizing: border-box;
+}
+
+.subscribe .subscribe-info .button-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  max-width: 140px;
+  width: 100%;
+  height: 50px;
+  cursor: pointer;
+  position: relative;
+}
+
+.subscribe .subscribe-info .button {
+  width: 100%;
+  height: 100%;
+  color: rgba(255, 255, 255, 1);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 16px;
+  text-align: center;
+  border: none;
+  background: rgba(0, 0, 0, 1);
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.subscribe .subscribe-info .vertical-line {
+    width: 2px;
+    height: 50px;
+    background: rgba(0, 0, 0, 1);
+    margin-left: 1px;
+}
