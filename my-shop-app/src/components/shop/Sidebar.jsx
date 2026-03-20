@@ -1,18 +1,56 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Input from '../common/Input';
 import Button from '../common/Button';
 import searchIcon from '../../assets/icons/search.svg';
 import seasonSaleBanner from '../../assets/images/season-sale.svg';
+import productsData from '../../assets/data/products.json';
 
-const Sidebar = () => {
-  const categories = ['All', 'Men', 'Women', 'Accessories', 'New Arrivals'];
-  const colors = ['Black', 'Blue', 'Red', 'Yellow', 'Green'];
+const Sidebar = ({ onFilterChange }) => {
+  const products = productsData.products || productsData;
   
-  const reviewedProducts = [
-    { name: 'Retro style handbag', price: 35.99, oldPrice: 52.99 },
-    { name: 'Warm casual sweater', price: 35.99 },
-    { name: 'Textured turtleneck with zip', price: 35.99 }
-  ];
+  // Получаем уникальные категории из всех товаров
+  const allCategories = ['All', ...new Set(products.flatMap(p => p.categories))];
+  
+  // Получаем уникальные цвета
+  const allColors = [...new Set(products.map(p => p.color))];
+  
+  const [selectedCategory, setSelectedCategory] = useState('All');
+  const [selectedColors, setSelectedColors] = useState([]);
+  const [priceRange, setPriceRange] = useState({ min: '', max: '' });
+
+  // Получаем 3 товара для раздела "Reviewed by you"
+  const reviewedProducts = products.slice(0, 3);
+
+  const handleCategoryClick = (category) => {
+    setSelectedCategory(category);
+    if (onFilterChange) {
+      onFilterChange({ category: category === 'All' ? null : category, colors: selectedColors, price: priceRange });
+    }
+  };
+
+  const handleColorChange = (color) => {
+    const updatedColors = selectedColors.includes(color)
+      ? selectedColors.filter(c => c !== color)
+      : [...selectedColors, color];
+    setSelectedColors(updatedColors);
+    if (onFilterChange) {
+      onFilterChange({ category: selectedCategory === 'All' ? null : selectedCategory, colors: updatedColors, price: priceRange });
+    }
+  };
+
+  const handlePriceChange = (type, value) => {
+    const updatedRange = { ...priceRange, [type]: value };
+    setPriceRange(updatedRange);
+    if (onFilterChange) {
+      onFilterChange({ category: selectedCategory === 'All' ? null : selectedCategory, colors: selectedColors, price: updatedRange });
+    }
+  };
+
+  const handleApplyFilter = () => {
+    if (onFilterChange) {
+      onFilterChange({ category: selectedCategory === 'All' ? null : selectedCategory, colors: selectedColors, price: priceRange });
+    }
+  };
 
   return (
     <div className="sidebar">
@@ -28,8 +66,13 @@ const Sidebar = () => {
         <div className="sidebar-title">Categories</div>
         <div className="sidebar-content">
           <ul className="custom-list">
-            {categories.map((category, index) => (
-              <li key={index} className={`item ${category === 'Men' ? 'active' : ''}`}>
+            {allCategories.map((category, index) => (
+              <li 
+                key={index} 
+                className={`item ${selectedCategory === category ? 'active' : ''}`}
+                onClick={() => handleCategoryClick(category)}
+                style={{ cursor: 'pointer' }}
+              >
                 {category}
               </li>
             ))}
@@ -42,8 +85,18 @@ const Sidebar = () => {
         <div className="sidebar-title">Price</div>
         <div className="sidebar-content">
           <div className="price-bar">
-            <Input type="text" placeholder="0" />
-            <Input type="text" placeholder="200" />
+            <Input 
+              type="number" 
+              placeholder="Min" 
+              value={priceRange.min}
+              onChange={(e) => handlePriceChange('min', e.target.value)}
+            />
+            <Input 
+              type="number" 
+              placeholder="Max" 
+              value={priceRange.max}
+              onChange={(e) => handlePriceChange('max', e.target.value)}
+            />
           </div>
         </div>
       </div>
@@ -53,14 +106,14 @@ const Sidebar = () => {
         <div className="sidebar-title">Color</div>
         <div className="sidebar-content">
           <div className="colors">
-            {colors.map((color) => (
+            {allColors.map((color) => (
               <div className="color" key={color}>
                 <input 
                   type="checkbox" 
                   className="color-checkbox" 
                   id={color} 
-                  name={color} 
-                  value={color.toLowerCase()} 
+                  checked={selectedColors.includes(color)}
+                  onChange={() => handleColorChange(color)}
                 />
                 <label htmlFor={color} className="color-name">{color}</label>
               </div>
@@ -72,7 +125,7 @@ const Sidebar = () => {
       {/* Apply Filter Button */}
       <div className="sidebar-item">
         <div className="button-wrapper">
-          <Button>Apply Filter</Button>
+          <Button onClick={handleApplyFilter}>Apply Filter</Button>
           <div className="vertical-line"></div>
         </div>
       </div>
@@ -82,9 +135,9 @@ const Sidebar = () => {
         <div className="sidebar-title">Reviewed by you</div>
         <div className="sidebar-content">
           <div className="reviewed-products">
-            {reviewedProducts.map((product, index) => (
-              <div className="product" key={index}>
-                <div className="image"></div>
+            {reviewedProducts.map((product) => (
+              <div className="product" key={product.id}>
+                <div className="image" style={{ backgroundImage: `url(${product.image})` }}></div>
                 <div className="info">
                   <div className="name">{product.name}</div>
                   <div className="price">

@@ -1,10 +1,13 @@
 import React from 'react';
 import Button from '../common/Button';
 
-const OrderSummary = () => {
-  const orderPrice = 146.98;
+const OrderSummary = ({ items }) => {
+  const orderPrice = items.reduce((sum, item) => {
+    const price = item.currentPrice || item.price;
+    return sum + (price * item.quantity);
+  }, 0);
   const delivery = 16;
-  const total = 162.98;
+  const total = orderPrice + delivery;
 
   return (
     <div className="order">

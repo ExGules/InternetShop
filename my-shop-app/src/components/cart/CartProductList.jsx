@@ -1,28 +1,20 @@
 import React from 'react';
 import CartProductItem from './CartProductItem';
 
-const CartProductList = () => {
-  const products = [
-    {
-      title: 'Fashionee - catton shirt',
-      size: 'S',
-      oldPrice: 52.99,
-      currentPrice: 35.99,
-      quantity: 1
-    },
-    {
-      title: 'Fashionee - catton shirt',
-      size: 'S',
-      oldPrice: null,
-      currentPrice: 110.99,
-      quantity: 1
-    }
-  ];
+const CartProductList = ({ items, onUpdateQuantity, onRemoveItem }) => {
+  if (!items || items.length === 0) {
+    return <div className="empty-cart">Корзина пуста</div>;
+  }
 
   return (
     <div className="product-list">
-      {products.map((product, index) => (
-        <CartProductItem key={index} product={product} />
+      {items.map((item) => (
+        <CartProductItem 
+          key={item.id}
+          product={item}
+          onUpdateQuantity={(newQuantity) => onUpdateQuantity(item.id, newQuantity)}
+          onRemove={() => onRemoveItem(item.id)}
+        />
       ))}
     </div>
   );

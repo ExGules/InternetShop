@@ -7,7 +7,7 @@ import profile from '../../assets/icons/profile.svg';
 import favorite from '../../assets/icons/favorite.svg';
 import cart from '../../assets/icons/cart.svg';
 
-const Header = () => {
+const Header = ({ onCartClick, favoriteCount = 0, cartCount = 0 }) => {
   return (
     <header className="header">
       <div className="left-side">
@@ -51,11 +51,11 @@ const Header = () => {
         </div>
         <div className="header-icon">
           <img src={favorite} alt="favorite" />
-          <div className="counter">1</div>
+          {favoriteCount > 0 && <div className="counter">{favoriteCount}</div>}
         </div>
-        <div className="header-icon">
+        <div className="header-icon" onClick={onCartClick} style={{ cursor: 'pointer' }}>
           <img src={cart} alt="cart" />
-          <div className="counter">10</div>
+          {cartCount > 0 && <div className="counter">{cartCount}</div>}
         </div>
       </div>
     </header>
