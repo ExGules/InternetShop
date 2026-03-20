@@ -1,6 +1,6 @@
 .footer {
     border-top: 30px solid rgba(238, 238, 238, 1);
-    position: relative; /* Добавляем для правильного позиционирования */
+    position: relative;
 }
 
 .footer .footer-info {
