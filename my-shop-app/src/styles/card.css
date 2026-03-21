@@ -423,40 +423,6 @@
   font-size: 14px;
 }
 
-/* Find us */
-.find-us {
-  margin-top: 20px;
-  padding-top: 20px;
-  border-top: 1px solid #e0e0e0;
-}
-
-.find-us-text {
-  font-size: 14px;
-  margin-bottom: 10px;
-  color: #666;
-}
-
-.find-us-links {
-  display: flex;
-  gap: 15px;
-  align-items: center;
-}
-
-.find-us-link a {
-  color: #666;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.find-us-link a:hover {
-  color: #ff6b6b;
-}
-
-.line {
-  width: 1px;
-  height: 15px;
-  background: #e0e0e0;
-}
 
 /* Пустая корзина */
 .empty-cart {

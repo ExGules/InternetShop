@@ -2,7 +2,7 @@ import React from 'react';
 import CartProductList from './CartProductList';
 import OrderSummary from './OrderSummary';
 import PromoCode from './PromoCode';
-import '../../styles/card.css';
+
 
 const Cart = ({ cartItems, onUpdateQuantity, onRemoveItem, onAddToFavorites, favorites }) => {
   return (

@@ -3,7 +3,7 @@ import favoriteIcon from '../../assets/icons/favorite.svg';
 import favoriteFilledIcon from '../../assets/icons/favorite-filled.svg';
 
 const ProductCard = ({ product, isFavorite, onAddToFavorites, onAddToCart }) => {
-  const [quantity, setQuantity] = useState(1);
+  const [quantity, setQuantity] = useState(0);
   
   // Определяем тип метки (Sale или New)
   const getLabel = () => {

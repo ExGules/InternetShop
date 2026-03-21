@@ -109,7 +109,6 @@
 .shop .sidebar .sidebar-item .sidebar-content .reviewed-products .product .image {
     width: 75px;
     height: 85px;
-    background: rgba(241, 242, 243, 1);
 }
 
 .shop .sidebar .sidebar-item .sidebar-content .reviewed-products .product .info {
@@ -175,8 +174,9 @@
 }
 
 .shop .products-wrapper .products .product .photo {
-    height: 365px;
-    background: #F1F2F3;
+    height: 360px;
+    background-size: cover;
+    background-position: center;
 }
 
 .shop .products-wrapper .products .product .photo .top-bar {
@@ -393,14 +393,6 @@
     margin-left: 1px;
 }
 
-.photo {
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  height: 200px;
-  width: 100%;
-}
-
 .image {
   background-size: cover;
   background-position: center;
@@ -434,18 +426,6 @@
 
 .product:hover {
   transform: translateY(-5px);
-}
-
-/* Фото товара */
-.product .photo {
-  position: relative;
-  width: 100%;
-  height: 280px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border-radius: 8px;
-  margin-bottom: 15px;
 }
 
 /* Информация о товаре */

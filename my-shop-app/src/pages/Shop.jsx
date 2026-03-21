@@ -6,7 +6,7 @@ import ProductList from '../components/shop/ProductList';
 import Pagination from '../components/shop/Pagination';
 import Subscribe from '../components/layout/Subscribe';
 import Footer from '../components/layout/Footer';
-import '../styles/shop.css';
+
 
 const Shop = () => {
   return (
