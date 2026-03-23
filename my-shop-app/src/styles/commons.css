@@ -97,7 +97,7 @@
     width: 5px;                       
     height: 5px;
     margin-right: 8px;
-    background-image: url('../icons/sqare.svg');
+    background-image: url('../assets/icons/sqare.svg');
 }
 
 .container .custom-list .item.active {
@@ -110,7 +110,7 @@
     width: 25px;
     height: 3px;
     margin-right: 8px;
-    background-image: url('../icons/small-row.svg');
+    background-image: url('../assets/icons/small-row.svg');
 }
 
 
@@ -209,6 +209,7 @@
     display: flex;
     gap: 15px;
     align-items: center;
+    margin-bottom: 250px;
 }
 
 .container .find-us .find-us-links .find-us-link a {

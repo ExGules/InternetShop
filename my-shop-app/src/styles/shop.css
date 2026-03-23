@@ -91,7 +91,7 @@
 }
 
 .shop .sidebar .sidebar-item .sidebar-content .colors .color .color-checkbox:checked+.color-name::before {
-    background-image: url("../icons/pink-chekbox.svg");
+    background-image: url("../assets/icons/pink-chekbox.svg");
 }
 
 .shop .sidebar .sidebar-item .sidebar-content .reviewed-products {
@@ -713,7 +713,6 @@
 
 .button {
   padding: 12px 24px;
-  background: #000;
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -721,10 +720,6 @@
   font-size: 14px;
   font-weight: 500;
   transition: background 0.3s ease;
-}
-
-.button:hover {
-  background: #333;
 }
 
 /* Reviewed products */
