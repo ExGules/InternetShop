@@ -1,4 +1,5 @@
 import React from 'react';
+import { useAuth } from '../../context/AuthContext';
 import logo from '../../assets/icons/logo.svg';
 import arrow from '../../assets/icons/arrow.svg';
 import arrowPink from '../../assets/icons/arrow-pink.svg';
@@ -8,6 +9,8 @@ import favorite from '../../assets/icons/favorite.svg';
 import cart from '../../assets/icons/cart.svg';
 
 const Header = ({ onCartClick, favoriteCount = 0, cartCount = 0 }) => {
+  const { isLoggedIn, login, logout } = useAuth();
+
   return (
     <header className="header">
       <div className="left-side">
@@ -46,9 +49,22 @@ const Header = ({ onCartClick, favoriteCount = 0, cartCount = 0 }) => {
         <div className="header-icon">
           <img src={search} alt="search" />
         </div>
-        <div className="header-icon">
+        
+        {/* Профиль/Авторизация */}
+        <div className="header-icon profile-container">
           <img src={profile} alt="profile" />
+          {isLoggedIn ? (
+            <>
+              <div className="online-status"></div>
+              <div className="auth-status logged-in">
+                <button onClick={logout} className="logout-btn-small">Выйти</button>
+              </div>
+            </>
+          ) : (
+            <button onClick={login} className="login-btn-small">Войти</button>
+          )}
         </div>
+        
         <div className="header-icon">
           <img src={favorite} alt="favorite" />
           {favoriteCount > 0 && <div className="counter">{favoriteCount}</div>}
