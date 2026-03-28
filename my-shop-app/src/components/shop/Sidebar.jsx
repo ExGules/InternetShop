@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Input from '../common/Input';
 import Button from '../common/Button';
 import searchIcon from '../../assets/icons/search.svg';
@@ -17,15 +17,36 @@ const Sidebar = ({ onFilterChange }) => {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedColors, setSelectedColors] = useState([]);
   const [priceRange, setPriceRange] = useState({ min: '', max: '' });
+  const [searchQuery, setSearchQuery] = useState('');
+  
+  // Состояние для применённых фильтров
+  const [appliedFilters, setAppliedFilters] = useState({ 
+    category: null, 
+    colors: [], 
+    price: { min: '', max: '' } 
+  });
 
   // Получаем 3 товара для раздела "Reviewed by you"
   const reviewedProducts = products.slice(0, 3);
 
+  // Debounce эффект ТОЛЬКО для поиска (с учётом применённых фильтров)
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (onFilterChange) {
+        onFilterChange({ 
+          search: searchQuery,
+          category: appliedFilters.category,
+          colors: appliedFilters.colors, 
+          price: appliedFilters.price 
+        });
+      }
+    }, 300); // 300ms задержка
+
+    return () => clearTimeout(timer);
+  }, [searchQuery, appliedFilters, onFilterChange]);
+
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
-    if (onFilterChange) {
-      onFilterChange({ category: category === 'All' ? null : category, colors: selectedColors, price: priceRange });
-    }
   };
 
   const handleColorChange = (color) => {
@@ -33,30 +54,37 @@ const Sidebar = ({ onFilterChange }) => {
       ? selectedColors.filter(c => c !== color)
       : [...selectedColors, color];
     setSelectedColors(updatedColors);
-    if (onFilterChange) {
-      onFilterChange({ category: selectedCategory === 'All' ? null : selectedCategory, colors: updatedColors, price: priceRange });
-    }
   };
 
   const handlePriceChange = (type, value) => {
     const updatedRange = { ...priceRange, [type]: value };
     setPriceRange(updatedRange);
-    if (onFilterChange) {
-      onFilterChange({ category: selectedCategory === 'All' ? null : selectedCategory, colors: selectedColors, price: updatedRange });
-    }
   };
 
   const handleApplyFilter = () => {
-    if (onFilterChange) {
-      onFilterChange({ category: selectedCategory === 'All' ? null : selectedCategory, colors: selectedColors, price: priceRange });
-    }
+    // Сохраняем текущие выбранные значения в appliedFilters
+    setAppliedFilters({
+      category: selectedCategory === 'All' ? null : selectedCategory,
+      colors: selectedColors,
+      price: priceRange
+    });
+  };
+
+  const handleSearchChange = (e) => {
+    setSearchQuery(e.target.value);
   };
 
   return (
     <div className="sidebar">
       <div className="search">
         <label>
-          <Input type="text" placeholder="Search" className="search-row" />
+          <Input 
+            type="text" 
+            placeholder="Search" 
+            className="search-row" 
+            value={searchQuery}
+            onChange={handleSearchChange}
+          />
           <img src={searchIcon} alt="search-icon" className="search-icon" />
         </label>
       </div>

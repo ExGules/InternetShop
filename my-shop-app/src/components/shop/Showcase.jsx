@@ -6,12 +6,26 @@ import Subscribe from '../layout/Subscribe';
 import productsData from '../../assets/data/products.json';
 
 const Showcase = ({ favorites, onAddToFavorites, onAddToCart }) => {
-  const [filters, setFilters] = useState({ category: null, colors: [], price: { min: '', max: '' } });
+  const [filters, setFilters] = useState({ search: '', category: null, colors: [], price: { min: '', max: '' } });
   
   const allProducts = productsData.products || productsData;
   
   // Фильтрация товаров
   const filteredProducts = allProducts.filter(product => {
+    // Фильтр по поиску
+    if (filters.search.trim()) {
+      const query = filters.search.toLowerCase();
+      const matchesSearch = 
+        product.name.toLowerCase().includes(query) ||
+        (product.description && product.description.toLowerCase().includes(query)) ||
+        (product.categories && product.categories.some(cat => cat.toLowerCase().includes(query))) ||
+        (product.color && product.color.toLowerCase().includes(query));
+      
+      if (!matchesSearch) {
+        return false;
+      }
+    }
+
     // Фильтр по категории
     if (filters.category && !product.categories.includes(filters.category)) {
       return false;
