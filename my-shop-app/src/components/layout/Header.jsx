@@ -11,6 +11,11 @@ import cart from '../../assets/icons/cart.svg';
 const Header = ({ onCartClick, favoriteCount = 0, cartCount = 0 }) => {
   const { isLoggedIn, login, logout } = useAuth();
 
+  const handleLogin = () => {
+    login();
+    alert('Вы авторизованы');
+  };
+
   return (
     <header className="header">
       <div className="left-side">
@@ -61,7 +66,7 @@ const Header = ({ onCartClick, favoriteCount = 0, cartCount = 0 }) => {
               </div>
             </>
           ) : (
-            <button onClick={login} className="login-btn-small">Войти</button>
+            <button onClick={handleLogin} className="login-btn-small">Войти</button>
           )}
         </div>
         
