@@ -1,5 +1,6 @@
 import React from 'react';
 import DotPattern from '../common/DotPattern';
+import headerImage from '../../assets/images/header-img.jpg';
 
 const ContentBlock = ({ title, onTitleClick }) => {
   const handleTitleClick = () => {
@@ -41,7 +42,10 @@ const ContentBlock = ({ title, onTitleClick }) => {
         </div>
         <div className="horizontal-line"></div>
       </div>
-      <div className="image-shop"></div>
+      <div
+        className="image-shop"
+        style={{ backgroundImage: `url(${headerImage})` }}
+      ></div>
     </div>
   );
 };

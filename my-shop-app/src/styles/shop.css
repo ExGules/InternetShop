@@ -285,9 +285,13 @@
   max-width: 1680px;
   width: 100%;
   height: 450px;
-  background: rgba(241, 242, 243, 1);
-  position: relative; 
-  overflow: visible;  
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  position: relative;
+  overflow: hidden; 
 }
 
 .subscribe .subscribe-info {
@@ -401,6 +405,8 @@
   height: 60px;
   border-radius: 4px;
 }
+
+
 
 .no-products {
   text-align: center;

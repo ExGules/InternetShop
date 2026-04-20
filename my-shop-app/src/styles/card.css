@@ -29,11 +29,15 @@
     padding: 0 0 30px 0;
     border-bottom: 1px solid rgba(68, 68, 68, 10%);
 }
+.photo {
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
 .cart .order-wrapper .product-list .product .photo {
     max-width: 130px;
     height: 140px;
-    background: rgba(241, 242, 243, 1);
     width: 100%;
 }
 

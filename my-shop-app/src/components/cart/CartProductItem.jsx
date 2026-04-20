@@ -1,7 +1,7 @@
 import React from 'react';
 
 const CartProductItem = ({ product, onUpdateQuantity, onRemove }) => {
-  const { name, title, size, oldPrice, currentPrice, price, quantity, photo } = product;
+  const { name, title, size, oldPrice, currentPrice, price, quantity, photo, image } = product;
   
   // Поддержка разных названий полей
   const productName = name || title;
@@ -10,7 +10,10 @@ const CartProductItem = ({ product, onUpdateQuantity, onRemove }) => {
 
   return (
     <div className="product">
-      <div className="photo" style={photo ? { backgroundImage: `url(${photo})` } : {}}></div>
+      <div
+  className="photo"
+  style={{ backgroundImage: `url(${photo || image})` }}
+></div>
       <div className="product-info">
         <div className="title">{productName} {size && `(${size})`}</div>
         <div className="price-wrapper">

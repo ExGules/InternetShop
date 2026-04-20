@@ -15,7 +15,9 @@ const CartHeader = () => {
         </div>
         <div className="horizontal-line"></div>
       </div>
-      <div className="image-shop"></div>
+      <div className="image-shop">
+        
+      </div>
     </div>
   );
 };

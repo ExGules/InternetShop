@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CartProductList from './CartProductList';
 import OrderSummary from './OrderSummary';
 import PromoCode from './PromoCode';
 import '../../styles/card.css';
 
 const Cart = ({ cartItems, onUpdateQuantity, onRemoveItem, onAddToFavorites, favorites }) => {
+
+  const [isPromoApplied, setIsPromoApplied] = useState(false);
+
   return (
     <div className="container">
       <div className="cart">
@@ -14,9 +17,15 @@ const Cart = ({ cartItems, onUpdateQuantity, onRemoveItem, onAddToFavorites, fav
             onUpdateQuantity={onUpdateQuantity}
             onRemoveItem={onRemoveItem}
           />
-          <OrderSummary items={cartItems} />
+
+          <OrderSummary 
+            items={cartItems}
+            isPromoApplied={isPromoApplied}
+          />
         </div>
+
         <PromoCode 
+          onApplyPromo={setIsPromoApplied}
           onAddToFavorites={onAddToFavorites}
           favorites={favorites}
         />

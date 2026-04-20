@@ -194,9 +194,12 @@
     margin-bottom: 199px;
     width: 800px;
     height: 400px;
-    background-color: #F1F2F3;
+     background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
     z-index: 0;
 }
+
 
 .container .find-us .find-us-text {
     margin: 0 0 20px 0;
