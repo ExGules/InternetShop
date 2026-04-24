@@ -1,0 +1,299 @@
+/* ================================
+   VARIABLES
+================================ */
+
+// Цвета
+$black: #000;
+$white: #FFF;
+$gray: #444; 
+$gray-light: #ffffffcd;
+$gray-transparent: rgba($gray, 0.2);
+$gray-text: rgba($gray, 0.5);
+$gray-dark: #444444;
+$pink: #FF8E8E;
+
+// Шрифты
+$font-primary: 'Raleway', sans-serif;
+$font-secondary: 'Josefin Sans', sans-serif;
+
+// Размеры
+$max-width: 1140px;
+$button-width: 240px;
+$input-padding: 0 25px 15px 0;
+$button-padding: 17px 74px;
+$gap-small: 2px;
+$gap-medium: 15px;
+$gap-large: 12px;
+$line-height: 170%;
+$border-width: 1px;
+$horizontal-line-height: 2px;
+$vertical-line-height: 21px;
+
+// Размеры шрифтов
+$font-size-small: 12px;
+$font-size-medium: 14px;
+$font-size-base: 16px;
+$font-size-large: 20px;
+$font-size-xl: 80px;
+
+/* ========================================
+   GLOBAL
+======================================== */
+
+* {
+    font-family: $font-primary;
+}
+
+/* ========================================
+   CONTAINER
+======================================== */
+
+.container {
+    max-width: $max-width;
+    width: 100%;
+    margin: 0 auto;
+
+    // Стили для инпута
+    .input {
+        border: none;
+        width: 100%;
+        outline: none;
+        border-bottom: $border-width solid $gray-transparent;
+        color: $gray-text;
+        padding: $input-padding;
+        font-weight: 400;
+        font-size: $font-size-medium;
+        line-height: $line-height;
+    }
+
+    // Обертка для кнопки
+    .button-wrapper {
+        display: flex;
+        gap: $gap-small;
+        align-items: center;
+        max-width: $button-width;
+        width: 100%;
+        cursor: pointer;
+
+        // Стили кнопки
+        .button {
+            color: $white;
+            font-weight: 600;
+            font-size: $font-size-base;
+            line-height: 16px;
+            text-align: center;
+            border: none;
+            background: $black;
+            padding: $button-padding;
+            cursor: pointer;
+            width: 100%;
+            text-align: center;
+        }
+
+        // Вертикальная линия
+        .vertical-line {
+            width: 2px;
+            height: 100%;
+            background: $black;
+            padding: 25px 0px;
+        }
+    }
+
+    // Стили цены
+    .price {
+        display: flex;
+        gap: $gap-medium;
+
+        // Текущая цена
+        .carrent-price {
+            font-family: $font-secondary;
+            font-size: $font-size-large;
+            font-weight: 400;
+            line-height: $font-size-large;
+        }
+
+        // Старая цена
+        .old-price {
+            font-family: $font-secondary;
+            font-weight: 300;
+            font-size: $font-size-base;
+            line-height: 100%;
+            text-transform: capitalize;
+            text-decoration: line-through;
+            color: $gray;
+        }
+    }
+
+    // Кастомный список
+    .custom-list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: $gap-medium;
+
+        // Пункты списка
+        .item {
+            color: $gray;
+            display: flex;
+            align-items: center;
+            gap: $gap-medium;
+            cursor: pointer;
+            font-family: $font-primary;
+            font-weight: 400;
+            font-size: $font-size-base;
+            line-height: $line-height;
+
+            // Иконка перед пунктом
+            &::before {
+                content: '';
+                display: flex;
+                width: 5px;
+                height: 5px;
+                margin-right: 8px;
+                background-image: url('../assets/icons/sqare.svg');
+            }
+
+            // Активный пункт
+            &.active {
+                color: $pink;
+
+                &::before {
+                    content: '';
+                    display: flex;
+                    width: 25px;
+                    height: 3px;
+                    margin-right: 8px;
+                    background-image: url('../assets/icons/small-row.svg');
+                }
+            }
+        }
+    }
+
+    // Блок "Найти нас"
+    .find-us {
+        .find-us-text {
+            margin: 0 0 20px 0;
+            font-weight: 500;
+            line-height: $line-height;
+            color: $black;
+        }
+
+        .find-us-links {
+            display: flex;
+            gap: $gap-medium;
+            align-items: center;
+            margin-bottom: 250px;
+
+            .find-us-link a {
+                text-decoration: none;
+                font-family: $font-primary;
+                font-weight: 600;
+                font-size: $font-size-small;
+                line-height: 100%;
+                text-transform: uppercase;
+                color: $gray;
+            }
+
+            .line {
+                border-bottom: $border-width solid $gray-dark;
+                height: $border-width;
+                width: 10px;
+            }
+        }
+    }
+}
+
+/* ========================================
+   FIRST SCREEN
+======================================== */
+
+.first-screen {
+    width: 100%;
+    height: 471px;
+}
+
+// Контент магазина
+.content-shop {
+    width: 850px;
+    height: 322px;
+    position: absolute;
+    top: 103px;
+    left: -60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+// Паттерн из точек
+.dot-pattern {
+    position: absolute;
+    top: 52px;
+    left: 132px;
+    width: 322px;
+    height: 354px;
+    z-index: 1;
+    background-image: radial-gradient(circle, $black 1px, transparent 1px);
+    background-size: 30px 30px;
+    opacity: 50%;
+    transform: rotate(90deg);
+}
+
+// Текстовый контент магазина
+.text-content-shop {
+    top: 63px;
+    left: 432px;
+    font-family: $font-secondary;
+    font-weight: 400;
+    font-size: $font-size-xl;
+    line-height: 100%;
+    color: $black;
+    margin: 0;
+    z-index: 2;
+    position: relative;
+}
+
+// Хлебные крошки
+.bread-crumbs {
+    position: absolute;
+    top: 281px;
+    left: 431px;
+    display: flex;
+    align-items: center;
+    gap: $gap-large;
+    z-index: 2;
+}
+
+// Вертикальная линия
+.vertical-line {
+    width: 1.5px;
+    height: $vertical-line-height;
+    background-color: $black;
+    opacity: 1;
+    z-index: 2;
+}
+
+// Горизонтальная линия
+.horizontal-line {
+    position: relative;
+    width: 850px;
+    height: $horizontal-line-height;
+    background-color: $black;
+    opacity: 1;
+    z-index: 1;
+    top: 122px;
+    left: 60px;
+}
+
+// Изображение магазина
+.image-shop {
+    margin-top: 50px;
+    margin-left: 1000px;
+    margin-bottom: 199px;
+    width: 800px;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+}

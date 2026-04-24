@@ -1,0 +1,189 @@
+// ==============================
+// FOOTER VARIABLES
+// ==============================
+
+$border-footer: #eee;
+$text-footer: #444444;
+$text-muted-footer: rgba($text-footer, 0.2);
+$link-footer: #444;
+$dot-footer: #000;
+$column-gap: 20px;
+
+
+// ==============================
+// FOOTER
+// ==============================
+
+.footer {
+  border-top: 30px solid $border-footer;
+  position: relative;
+
+  // footer columns wrapper
+  .footer-info {
+    margin: 110px 0 90px 0;
+    display: flex;
+
+    // column
+    .column {
+
+      // column title
+      .title {
+        font-family: Josefin Sans;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 24px;
+      }
+
+      // links list
+      .custom-list {
+        .item {
+          gap: 12px;
+
+          &::before {
+            width: 3px;
+            height: 3px;
+          }
+        }
+
+        a {
+          text-decoration: none;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 24px;
+          text-align: left;
+          color: $link-footer;
+        }
+      }
+
+      // logo
+      .logo {
+        margin: 0 0 25px 0;
+      }
+
+      // brand description
+      .about-brand {
+        padding: 0 0 25px 0;
+        border-bottom: 1px solid $text-muted-footer;
+        margin: 0 0 35px 0;
+        font-family: Raleway;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 170%;
+        color: $text-footer;
+      }
+
+      // column 1
+      &.column-1 {
+        max-width: 331px;
+        margin: 0 60px 0 0;
+      }
+
+      // column 2
+      &.column-2 {
+        margin: 0 100px 0 0;
+        display: flex;
+        flex-direction: column;
+        gap: $column-gap;
+      }
+
+      // column 3
+      &.column-3 {
+        margin: 0 74px 0 0;
+        max-width: 119px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: $column-gap;
+      }
+
+      // column 4 (newsletter)
+      &.column-4 {
+        max-width: 361px;
+        position: relative;
+
+        .title {
+          margin: 0 0 16px 0;
+        }
+
+        // newsletter text
+        .newsletter-text {
+          margin: 0 0 36px 0;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 170%;
+        }
+
+        // newsletter form
+        .newsletter-form {
+          position: relative;
+
+          .input {
+            padding-right: 30px;
+          }
+
+          .send-icon {
+            position: absolute;
+            right: 0;
+          }
+        }
+      }
+    }
+  }
+
+  // ==============================
+  // COPYRIGHT
+  // ==============================
+
+  .coopyright {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    border-top: 1px solid $text-muted-footer;
+    padding-top: 23px;
+    font-family: Raleway;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 170%;
+    letter-spacing: 0%;
+    color: $text-footer;
+
+    // payment methods wrapper
+    .payment-methods-container {
+      display: flex;
+      gap: 13px;
+      align-items: center;
+      font-family: Raleway;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 170%;
+      text-transform: capitalize;
+      color: $text-footer;
+
+      // icons
+      .payment-methods {
+        display: flex;
+        gap: 8px;
+      }
+    }
+  }
+}
+
+
+// ==============================
+// FOOTER DOT PATTERN
+// ==============================
+
+.dot-pattern-footer {
+  position: absolute;
+  top: 50%;
+  left: 415px;
+  transform: translateY(-50%);
+  width: 300px;
+  height: 300px;
+  z-index: 1;
+  background-image: radial-gradient(circle, $dot-footer 1px, transparent 1px);
+  background-size: 30px 30px;
+  background-position: 0 0;
+  opacity: 0.5;
+  pointer-events: none;
+}

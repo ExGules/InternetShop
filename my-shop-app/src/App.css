@@ -1,6 +1,6 @@
-@import './styles/card.css';
-@import './styles/commons.css';
-@import './styles/footer.css';
-@import './styles/header.css';
-@import './styles/shop.css';
-@import './styles/reset.css';
+@import './styles/card.scss';
+@import './styles/commons.scss';
+@import './styles/footer.scss';
+@import './styles/header.scss';
+@import './styles/shop.scss';
+@import './styles/reset.scss';
